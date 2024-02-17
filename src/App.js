@@ -1,5 +1,8 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import Shop from './pages/Shop';
+import Product from './pages/Product';
+import Cart from './pages/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShopCategory from './pages/ShopCategory';
 import LoginSignup from './pages/LoginSignup';
