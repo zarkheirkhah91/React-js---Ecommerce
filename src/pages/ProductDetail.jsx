@@ -7,7 +7,7 @@ import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
 import DescriptionBox from "../components/DescriptionBox/DescriptionBox";
 import RelatedProducts from "../components/RelatedProducts/RelatedProducts";
 
-const Product = () => {
+const ProductDetail = () => {
   const { all_product } = useContext(ShopContext);
   const { productId } = useParams();
   const product = all_product.find((e) => e.id === productId);
@@ -16,11 +16,10 @@ const Product = () => {
       <div>
         <Breadcrumbs product={product} />
         <ProductDisplay product={product} />
-        <p>lotytytytytyt</p>
         <DescriptionBox />
         <RelatedProducts />
       </div>
   );
 };
 
-export default Product;
+export default ProductDetail;

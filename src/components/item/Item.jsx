@@ -1,11 +1,15 @@
 import React from 'react'
 import './item.css'
-import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const Item = (props) => {
+    let navigate = useNavigate();
+
     return (
-        <div className='item'>
-            <Link to={`/product/${props.id}`}><img src={props.image} alt='' /></Link>
+        <div onClick={()=>{navigate(`/product-detail/${props.id}`)}} className='item'>
+            
+            {/* <Link to={`/productdetail/:${props.id}`}><img onClick={window.scrollTo(0,0)} src={props.image} alt='' /></Link> */}
+            
             <p>{props.name}</p>
             <div className='item-prices'>
                 <div className='item-price.new'>
