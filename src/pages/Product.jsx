@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
-import Breadcrum from '../components/Breadcrum/Breadcrum'
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay'
 
 
@@ -12,8 +12,8 @@ const Product = () => {
   const product = all_product.find((e)=>e.id === productId)
   return (
     <div>
-      <Breadcrum product={product}/>
-      <ProductDisplay product={product} />
+      <Breadcrumbs product={product}/>
+      <ProductDisplay product={product}/>
     </div>
   )
 }
