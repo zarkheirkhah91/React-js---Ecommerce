@@ -9,17 +9,21 @@ import RelatedProducts from "../components/RelatedProducts/RelatedProducts";
 
 const Product = () => {
   const { all_product } = useContext(ShopContext);
-  const { productId } = useParams();
-  const product = all_product.find((e) => e.id === productId);
+  const { id } = useParams();
+  console.log(typeof id, "===>ll", id);
+  console.log(typeof Number(id), "===>22");
+
+  const product = all_product.find((e) => e.id === Number(id));
+  console.log(product, "===>111");
+  console.log(id, "===>productId");
 
   return (
-      <div>
-        <Breadcrumbs product={product} />
-        <ProductDisplay product={product} />
-        <p>lotytytytytyt</p>
-        <DescriptionBox />
-        <RelatedProducts />
-      </div>
+    <div>
+      <Breadcrumbs product={product} ee={'test'}/>
+      <ProductDisplay product={product} />
+      <DescriptionBox />
+      <RelatedProducts />
+    </div>
   );
 };
 

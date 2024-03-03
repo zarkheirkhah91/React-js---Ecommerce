@@ -7,18 +7,18 @@ import { ShopContext } from "../../context/ShopContext";
 const ProductDisplay = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
-
+console.log(product,'product =========>22')
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <img src={product?.image??null} alt="" />
+          <img src={product?.image??null} alt="" />
+          <img src={product?.image??null} alt="" />
+          <img src={product?.image??null} alt="" />
         </div>
         <div className="productdisplay-img">
-          <img className="productdisplay-main-img" src={product.image} alt="" />
+          <img className="productdisplay-main-img" src={product?.image??null} alt="" />
         </div>
       </div>
       <div className="productdisplay-right">
@@ -53,7 +53,13 @@ const ProductDisplay = (props) => {
             <div>XXL</div>
           </div>
         </div>
-        <button onClick={() => {addToCart(product.id)}}>ADD TO CART</button>
+        <button
+          onClick={() => {
+            addToCart(product.id);
+          }}
+        >
+          ADD TO CART
+        </button>
         <p className="productdisplay-right-category">
           <span>Category :</span>Women , T_Shirt, Crop Top
         </p>
